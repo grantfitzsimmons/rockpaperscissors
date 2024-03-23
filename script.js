@@ -49,35 +49,35 @@ function playRound(playerSelection, computerSelection) {
     // This checks the user input and chooses the appropriate outcome.
     if (playerSelection == 'rock') {
         if (computerSelection == 'paper') {
-            return(loss())   
+            return(loss())   ;
         }
         else if (computerSelection == 'rock') {
-            return(tie())
+            return(tie());
         }
         else {
-            return(win())
+            return(win());
         }
     }
     if (playerSelection == 'paper') {
         if (computerSelection == 'scissors') {
-            return(loss())   
+            return(loss());
         }
         else if (computerSelection == 'paper') {
-            return(tie())
+            return(tie());
         }
         else {
-            return(win())
+            return(win());
         }
     }
     if (playerSelection == 'scissors') {
         if (computerSelection == 'rock') {
-            return(loss())   
+            return(loss());
         }
         else if (computerSelection == 'scissors') {
-            return(tie())
+            return(tie());
         }
         else {
-            return(win())
+            return(win());
         }
     }
 }
@@ -89,7 +89,7 @@ function playGame() {
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
 
-        let playerSelection = getPlayerChoice()
+        let playerSelection = getPlayerChoice();
 
         // Sets the computer selection to be the computer's choice.
         let computerSelection = getComputerChoice();
@@ -106,12 +106,12 @@ function playGame() {
     // This checks if the player's score is larger than the computer score
     // to determine a winner.
     if (score > computerScore) {
-        console.log("You won the tournament!")
+        console.log("You won the tournament!");
     }
     else {
-        console.log("You lost the tournament...")
+        console.log("You lost the tournament...");
     }
-    console.log("You won " + score + " times.")
+    console.log("You won " + score + " times.");
 }
 
 // This plays the game
