@@ -17,19 +17,20 @@ function getComputerChoice() {
 // This function is called if the player loses.
 function loss() {
     console.log("You lose.")
+    return "loss"
 }
 
 // This function is called if the player wins!
 function tie() {
     console.log("You tied.")
+    return "tie"
 }
 
 // This function is called if the player wins!
 function win() {
     console.log("You win!")
+    return "win"
 }
-
-let playerSelection = getPlayerChoice()
 
 // This function handles the user input
 function getPlayerChoice() {
@@ -40,11 +41,6 @@ function getPlayerChoice() {
     }
     return playerInput;
 }
-
-// Sets the computer selection to be the computer's choice.
-let computerSelection = getComputerChoice();
-
-playRound(playerSelection, computerSelection);
 
 function playRound(playerSelection, computerSelection) {
     // This calls the function that returns either
@@ -89,5 +85,19 @@ function playRound(playerSelection, computerSelection) {
 // This function plays a five round game and keeps score.
 // The winner is reported at the end.
 function playGame() {
+    for (let i = 0; i < 5; i++) {
+        let score;
 
+        let playerSelection = getPlayerChoice()
+
+        // Sets the computer selection to be the computer's choice.
+        let computerSelection = getComputerChoice();
+
+        playRound(playerSelection, computerSelection);
+
+        
+    }
 }
+
+// This plays the game
+playGame();
