@@ -14,6 +14,17 @@ function getComputerChoice() {
     }
 }
 
+// This function is called if the player loses.
+
+function loss() {
+    console.log("You lose.")
+}
+
+// This function is called if the player wins!
+function win() {
+    console.log("You win!")
+}
+
 // This calls the function that returns either
 // 'Rock', 'Paper', or 'Scissors'
 let computerSelection = getComputerChoice()
@@ -23,7 +34,28 @@ console.log(computerSelection);
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt()
     if (playerSelection == 'rock') {
-        console.log("player chose rock")
+        if (computerSelection == 'paper') {
+            loss()
+        }
+        else {
+            win()
+        }
+    }
+    if (playerSelection == 'paper') {
+        if (computerSelection == 'scissors') {
+            loss()
+        }
+        else {
+            win()
+        }
+    }
+    if (playerSelection == 'scissors') {
+        if (computerSelection == 'rock') {
+            loss()
+        }
+        else {
+            win()
+        }
     }
 }
 
