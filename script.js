@@ -16,20 +16,20 @@ function getComputerChoice() {
 
 // This function is called if the player loses.
 function loss() {
-    console.log("You lose.")
-    return "loss"
+    console.log("You lose.");
+    return("lose");
 }
 
 // This function is called if the player wins!
 function tie() {
-    console.log("You tied.")
-    return "tie"
+    console.log("You tied.");
+    return("tie");
 }
 
 // This function is called if the player wins!
 function win() {
-    console.log("You win!")
-    return "win"
+    console.log("You win!");
+    return("win");
 }
 
 // This function handles the user input
@@ -49,35 +49,35 @@ function playRound(playerSelection, computerSelection) {
     // This checks the user input and chooses the appropriate outcome.
     if (playerSelection == 'rock') {
         if (computerSelection == 'paper') {
-            loss()   
+            return(loss())   
         }
         else if (computerSelection == 'rock') {
-            tie()
+            return(tie())
         }
         else {
-            win()
+            return(win())
         }
     }
     if (playerSelection == 'paper') {
         if (computerSelection == 'scissors') {
-            loss()
+            return(loss())   
         }
         else if (computerSelection == 'paper') {
-            tie()
+            return(tie())
         }
         else {
-            win()
+            return(win())
         }
     }
     if (playerSelection == 'scissors') {
         if (computerSelection == 'rock') {
-            loss()
+            return(loss())   
         }
         else if (computerSelection == 'scissors') {
-            tie()
+            return(tie())
         }
         else {
-            win()
+            return(win())
         }
     }
 }
@@ -85,18 +85,34 @@ function playRound(playerSelection, computerSelection) {
 // This function plays a five round game and keeps score.
 // The winner is reported at the end.
 function playGame() {
+    let score = 0;
+    let computerScore = 0;
     for (let i = 0; i < 5; i++) {
-        let score;
 
-        let playerSelection = getPlayerChoice()
+        // let playerSelection = getPlayerChoice()
+        playerSelection = "rock";
 
         // Sets the computer selection to be the computer's choice.
         let computerSelection = getComputerChoice();
 
-        playRound(playerSelection, computerSelection);
+        let outcome = playRound(playerSelection, computerSelection);
 
-        
+        if (outcome == "win") {
+            score = score + 1;
+        }
+        else if (outcome == "lose") {
+            computerScore = computerScore + 1;
+        }
     }
+    // This checks if the player's score is larger than the computer score
+    // to determine a winner.
+    if (score > computerScore) {
+        console.log("You won the tournament!")
+    }
+    else {
+        console.log("You lost the tournament...")
+    }
+    console.log("You won " + score + " times.")
 }
 
 // This plays the game
