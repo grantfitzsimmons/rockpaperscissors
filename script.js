@@ -33,12 +33,10 @@ let playerSelection = getPlayerChoice()
 
 // This function handles the user input
 function getPlayerChoice() {
-    playerInput = prompt().toLowerCase()
-    if (playerInput == "rock"  || playerInput == "scissors" || playerInput == "paper") {
-    }
-    else {
-        console.log("You must enter either rock, paper, or scissors.");
-        getPlayerChoice();
+    const playerInput = prompt().toLowerCase();
+    if (playerInput !== "rock" && playerInput !== "scissors" && playerInput !== "paper") {
+        console.log("You must enter rock, paper, or scissors.");
+        return getPlayerChoice();
     }
     return playerInput;
 }
