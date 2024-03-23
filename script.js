@@ -86,5 +86,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// This function plays a five round game and keeps score.
+// The winner is reported at the end.
+function playGame() {
 
-
+}
