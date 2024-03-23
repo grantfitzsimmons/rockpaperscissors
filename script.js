@@ -15,9 +15,13 @@ function getComputerChoice() {
 }
 
 // This function is called if the player loses.
-
 function loss() {
     console.log("You lose.")
+}
+
+// This function is called if the player wins!
+function tie() {
+    console.log("You tied.")
 }
 
 // This function is called if the player wins!
@@ -29,13 +33,15 @@ function win() {
 // 'Rock', 'Paper', or 'Scissors'
 let computerSelection = getComputerChoice()
 
-console.log(computerSelection);
+console.log("Computer chose: "+ computerSelection);
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt()
     if (playerSelection == 'rock') {
         if (computerSelection == 'paper') {
-            loss()
+            loss()   
+        }
+        else if (computerSelection == 'rock') {
+            tie()
         }
         else {
             win()
@@ -45,6 +51,9 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection == 'scissors') {
             loss()
         }
+        else if (computerSelection == 'paper') {
+            tie()
+        }
         else {
             win()
         }
@@ -53,12 +62,17 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection == 'rock') {
             loss()
         }
+        else if (computerSelection == 'scissors') {
+            tie()
+        }
         else {
             win()
         }
     }
 }
 
-let playerSelection;
-playRound();
+playerSelection = prompt().toLowerCase()
+console.log(playerSelection);
+playRound(playerSelection, computerSelection);
+
 
