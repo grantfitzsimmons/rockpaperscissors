@@ -89,8 +89,7 @@ function playGame() {
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
 
-        // let playerSelection = getPlayerChoice()
-        playerSelection = "rock";
+        let playerSelection = getPlayerChoice()
 
         // Sets the computer selection to be the computer's choice.
         let computerSelection = getComputerChoice();
