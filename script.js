@@ -35,11 +35,12 @@ let playerSelection = getPlayerChoice()
 function getPlayerChoice() {
     playerInput = prompt().toLowerCase()
     if (playerInput == "rock"  || playerInput == "scissors" || playerInput == "paper") {
-        return playerInput
     }
     else {
-        console.log("You must enter either rock, paper, or scissors.")
+        console.log("You must enter either rock, paper, or scissors.");
+        getPlayerChoice();
     }
+    return playerInput;
 }
 
 // Sets the computer selection to be the computer's choice.
