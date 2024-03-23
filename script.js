@@ -29,13 +29,29 @@ function win() {
     console.log("You win!")
 }
 
-// This calls the function that returns either
-// 'Rock', 'Paper', or 'Scissors'
-let computerSelection = getComputerChoice()
+let playerSelection = getPlayerChoice()
 
-console.log("Computer chose: "+ computerSelection);
+// This function handles the user input
+function getPlayerChoice() {
+    playerInput = prompt().toLowerCase()
+    if (playerInput == "rock"  || playerInput == "scissors" || playerInput == "paper") {
+        return playerInput
+    }
+    else {
+        console.log("You must enter either rock, paper, or scissors.")
+    }
+}
+
+// Sets the computer selection to be the computer's choice.
+let computerSelection = getComputerChoice();
+
+playRound(playerSelection, computerSelection);
 
 function playRound(playerSelection, computerSelection) {
+    // This calls the function that returns either
+    // 'Rock', 'Paper', or 'Scissors'
+    console.log("Computer chose: "+ computerSelection.substring(0,1).toUpperCase()+computerSelection.substring(1));
+    // This checks the user input and chooses the appropriate outcome.
     if (playerSelection == 'rock') {
         if (computerSelection == 'paper') {
             loss()   
@@ -71,8 +87,5 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-playerSelection = prompt().toLowerCase()
-console.log(playerSelection);
-playRound(playerSelection, computerSelection);
 
 
