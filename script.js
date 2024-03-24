@@ -85,7 +85,7 @@ function playRound(playerSelection, computerSelection) {
 // This function plays a five round game and keeps score.
 // The winner is reported at the end.
 function playGame() {
-    let score = 0;
+    let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
 
@@ -97,7 +97,7 @@ function playGame() {
         let outcome = playRound(playerSelection, computerSelection);
 
         if (outcome == "win") {
-            score = score + 1;
+            playerScore = playerScore + 1;
         }
         else if (outcome == "lose") {
             computerScore = computerScore + 1;
@@ -105,13 +105,13 @@ function playGame() {
     }
     // This checks if the player's score is larger than the computer score
     // to determine a winner.
-    if (score > computerScore) {
+    if (playerScore > computerScore) {
         console.log("You won the tournament!");
     }
     else {
         console.log("You lost the tournament...");
     }
-    console.log("You won " + score + " times.");
+    console.log("You won " + playerScore + " times.");
 }
 
 // This plays the game
